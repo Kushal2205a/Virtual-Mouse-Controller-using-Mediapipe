@@ -91,18 +91,6 @@ python app.py --device 0 --width 960 --height 540
 ```
 
 ---
-
-## Project Structure
-
-- `app.py` — main app (hand + gaze tracking, gesture actions)
-- `utils.py` — FPS helper
-- `model/`
-  - `keypoint_classifier/` — gesture classifier (labels, dataset CSV, TFLite model)
-  - `point_history_classifier/` — optional point-history classifier (labels, dataset CSV, TFLite model)
-- `keypoint_classifcation.py` — training script that produces a `.tflite` model
-
----
-
 ## Data Collection & Training (optional)
 
 The app can write training rows directly while it’s running:
@@ -121,14 +109,3 @@ python keypoint_classifcation.py
 This produces a `keypoint_classifier.tflite` used at runtime.
 
 ---
-
-## Safety / Notes
-
-- The app disables PyAutoGUI failsafe by default. If you change this, verify you still have an easy way to regain control.
-- For multi-monitor setups, cursor mapping uses full screen size and should work across displays.
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
